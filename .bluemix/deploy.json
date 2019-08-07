@@ -16,7 +16,7 @@
     "properties": {
         "prod-region": {
             "description": {
-                "$ref": "#/messages/deploy.region"
+                "$ref": "#/nls/messages/deploy.region"
             },
             "type": "string",
             "validator": {
