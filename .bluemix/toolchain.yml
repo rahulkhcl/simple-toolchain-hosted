@@ -44,20 +44,13 @@ services:
       $env.source_provider ? $env.source_provider : 'hostedgit'
     parameters:
       repo_name: '{{toolchain.name}}'
-      #repo_url: >
-        #$env.type === 'link' ? 
-        #  $env.app_repo : 'https://github.com/open-toolchain/node-hello-world'
+      repo_url: > 
+      $env.type === 'link' ? $env.app_repo : 'https://github.com/rahulkhcl/rnodecloudant'
 
-        repo_url: >
-          $env.type === 'link' ? 
-            $env.app_repo : 'https://github.com/rahulkhcl/rnodecloudant'  
-
-      #source_repo_url: >
-      #  $env.type === 'fork' || $env.type === 'clone' ? 
-      #    $env.app_repo : 'https://github.com/open-toolchain/node-hello-world'
       source_repo_url: >
         $env.type === 'fork' || $env.type === 'clone' ? 
           $env.app_repo : 'https://github.com/rahulkhcl/rnodecloudant'
+
       type: $env.type || 'clone'
       has_issues: true
       enable_traceability: true
