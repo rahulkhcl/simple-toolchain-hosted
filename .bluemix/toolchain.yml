@@ -41,7 +41,7 @@ toolchain:
 services:
   sample-repo:
     service_id: >
-      $env.source_provider ? $env.source_provider : 'hostedgit'
+      $env.source_provider ? $env.source_provider : 'githubconsolidated'
     parameters:
       repo_name: '{{toolchain.name}}'
       repo_url: > 
@@ -78,5 +78,9 @@ form:
   pipeline:
     parameters:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
+      prod-region: 'us-south'
+      prod-organization: 'HCL-Exploration'
+      prod-space: 'dev'
+      api-key: 'RqY-3hgBywxMVf_Lh3JZgUorC0HbzjoA5l8EYkBZsA4p'
     schema:
       $ref: deploy.json
