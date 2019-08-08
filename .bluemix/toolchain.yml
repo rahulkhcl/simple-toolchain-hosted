@@ -48,10 +48,10 @@ services:
       $env.type === 'link' ? $env.app_repo : 'https://github.com/rahulkhcl/rnodecloudant'
 
       source_repo_url: >
-        $env.type === 'fork' || $env.type === 'clone' ? 
+        $env.type === 'fork' || $env.type === 'link' ? 
           $env.app_repo : 'https://github.com/rahulkhcl/rnodecloudant'
 
-      type: $env.type || 'clone'
+      type: $env.type || 'link'
       has_issues: true
       enable_traceability: true
   sample-build:
